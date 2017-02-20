@@ -97,3 +97,4 @@ g5 <- plot_ly(perdida.porcentaje.exterior2,
 g5
 ```
 
+hasta aqui
