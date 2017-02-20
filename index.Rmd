@@ -20,9 +20,80 @@ rm(pkgs)
 ```
 <br>
 <br>
-<br>
 <!-- Header -->
 <center><h1><i class="fa fa-thumb-tack"></i>La derrota del 21F: La historia que cuentan los números</h1></center>
 <br>
 <br>
+<center>El 21 de Febrero de 2016, el presidente Evo Morales Aima sufrió su primera derrota electoral.
+No es la primera vez que el partido de gobierno pierde una elección, pero es la primera vez que el presidente Morales pierde el apoyo que, incuestionablemente, tuvo desde las elecciones del año 2005</center>
 <br>
+<center><img src="fotos/evo.caratula.png" height="1000px" width="750px" /></center>
+<br>
+
+A un año del referendo por la reelección...
+
+**¿Qué dicen los números?**
+
+**¿Cómo, dónde y por qué perdió realmente el Presidente Morales?**
+
+<center><h2>**VOTO EN EL EXTERIOR: ¿Bastión del Presidente?**</center></h2>
+<br>
+<center><img src="fotos/AGL.png" height="500px" width="300px" /></center> > *"En el exterior se ha dado un fenómeno muy interesante. En algunos países, en Asia, ganó el No, pero son 10, 20, 40, 100 votos. Sin embargo, en los lugares donde hay mayor presencia boliviana, de gente trabajadora, sencilla y esforzada, como es el caso de Argentina y Brasil, el SI ha ganado de manera abrumadora, con cerca del 80% en Argentina, y 80% en Brasil. Sin embargo, el recuento oficial lo va a dar el TSE. Pero por supuesto que esos datos influyen de manera notable en el recuento final" Alvaro García Linera*
+*Fuente:* [La Razón](http://www.la-razon.com/index.php?_url=/nacional/animal_electoral/dice-votos-paises-clave_0_2441155884.html)
+<br>
+<br>
+<center><h4>**Los resultados oficiales del voto en el exterior muestran dos verdades muy claras**:<center></h4>
+
+<center><h4>Casi la mitad de las y los electores **NO FUERON A VOTAR**<center><h4>
+```{r pressure, echo=FALSE,include=T}
+agregado.3 <- rio::import("bases/agregado.3.csv")
+g1 <- plot_ly(agregado.3, x = agregado.3$PROCESO, y = agregado.3$`PORCENTAJE EMITIOS`,
+              type = "bar", name = "VOTOS EMITIDOS") %>%
+  add_trace(y = agregado.3$`PORCENTAJE ABSTECIÓN`, name = "ABSTENCIÓN") %>%
+  layout(barmode = "stack")
+g1
+```
+<br>
+<br>
+<center><h4>La tendencia de los que votaron el 21F muestra una **PÉRDIDA DE APOYO DEL 21%**<center></h4>
+```{r,echo=FALSE,include=T}
+perdida.afuera <- rio::import("bases/perdida.afuera.csv")
+g2 <- plot_ly(perdida.afuera, x = perdida.afuera$PROCESO, 
+              y = perdida.afuera$APOYO, type = "bar", name = "yyy")
+g2
+```
+<br>
+<br>
+<center><h4>Las y los bolivianos pueden votar en 33 países además de Bolivia. Sin embargo, el 95% de los votos del exterior se concentran en 6 paÍses:<center></h4>
+```{r,echo=FALSE,include=T}
+caida.emitidos.exterior <- rio::import("bases/caida.emitidos.exterior.csv")
+g3 <- plot_ly(caida.emitidos.exterior, 
+             labels = caida.emitidos.exterior$PAÍS, 
+             values = caida.emitidos.exterior$`DIFERENCIA EMITIDOS EVO POSITIVO` , type = "pie") %>%
+  layout(xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+g3
+```
+<br>
+<br>
+<center><h4>En comparación con las elecciones nacionales de 2014, más de 80 mil personas **NO VOTARON POR EVO MORALES**<center></h4>
+```{r,echo=FALSE,include=T}
+perdida.porcentaje.exterior1 <- rio::import("bases/perdida.porcentaje.exterior1.csv")
+g4 <- plot_ly(perdida.porcentaje.exterior1, 
+              x = perdida.porcentaje.exterior1$`DIFERENCIA EVO`,
+              y = perdida.porcentaje.exterior1$PAÍS,
+              type = "bar", name = "xxx", orientation = "h")
+g4
+```
+<br>
+<br>
+<center><h4>De los que sí votaron, la comparación de ambas elecciones muestra que el presidente PERDI? en 31 de los 33 pa?ses. En promedio, el apoyo al presidente en el exterior **BAJÓ 21%**<center></h4>
+```{r,echo=FALSE,include=T}
+perdida.porcentaje.exterior2 <- rio::import("bases/perdida.porcentaje.exterior2.csv")
+g5 <- plot_ly(perdida.porcentaje.exterior2, 
+              x = perdida.porcentaje.exterior2$`PÉRDIDA PORCENTAJES`,
+              y = perdida.porcentaje.exterior2$PAÍS,
+              type = "bar", name = "xxx", orientation = "h")
+g5
+```
+
