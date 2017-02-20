@@ -1,10 +1,28 @@
 ---
-title: "Untitled"
-output: html_document
+output:
+    html_document:
+        highlight: kate
+        theme: journal
+        self_contained: false
+        fig_caption: true
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+knitr::opts_chunk$set(echo = F)
+Sys.setlocale(locale = "es_ES.UTF-8")
+setwd("/Users/rafalopezv/Dropbox/R/analisis.electoral/21F/")
 
-xxxx
+# Cargado de paquetes necesarios
+pkgs <- c("rio", "magrittr", "xlsx", "readxl", "stringi", "gdata",
+          "gsubfn", "dplyr", "plyr", "leaflet", "plotly")
+lapply(pkgs, function(x) require(x, character.only = TRUE))
+rm(pkgs)
+```
+<br>
+<br>
+<br>
+<!-- Header -->
+<center><h1><i class="fa fa-thumb-tack"></i>La derrota del 21F: La historia que cuentan los números</h1></center>
+<br>
+<br>
+<br>
