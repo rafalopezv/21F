@@ -138,15 +138,69 @@ Los conflictos influyeron de manera importante en la pérdida de apoyo del presi
 ## Claramente, el apoyo histórico al presidente Morales ***ha BAJADO*** en lugares estratégicos para el MAS.
 <br>
 <br>
-
 <br>
-<br>
-
+```{r,echo=FALSE,include=T}
+clave3 <- rio::import("bases/clave3.csv")
+g7 <- plot_ly(clave3, x = clave3$PROCESO, y = clave3$CHAPARE, type = "scatter", mode = "lines", name = "CHAPARE") %>%
+  add_trace(y = clave3$`EL ALTO`, name = "EL ALTO") %>% add_trace(y = clave3$POTOSÍ, name = "POTOSÍ")
+g7
+```
 ## El presidente necesitaba 69.244 votos más para ganar el 21F.
 <br>
 ## ***El presidente perdió 99.858 votos en Potosí, El Alto y su propio bastión, el Chapare...***
 <br>
 <br>
-<center><img src="fotos/chavez.png" height="500px" width="300px" /></center>
+
+##REFERENCIAS
+<br>
+<br>
+Declaraciones de autoridades del gobierno nacional
+<br>
+Evo Morales
+<br>
+[Las frases con las que Evo Morales evaluó los resultados del referéndum](http://www.la-razon.com/nacional/animal_electoral/Frases-Evo-Morales_0_2442355800.html)
+<br>
+Álvaro García Linera
+<br>
+[MAS dice que el Sí tiene 80% de votos en 2 países clave]( http://www.la-razon.com/index.php?_url=/nacional/animal_electoral/dice-votos-paises-clave_0_2441155884.html)
+[García Linera: “Todos fuimos títeres de tres o cuatro personas”]( http://eju.tv/2016/05/garcia-linera-todos-fuimos-titeres-tres-cuatro-personas/)
+<br>
+Juan Ramón Quintana
+<br>
+[“En Bolivia existen dos opciones: la restauración conservadora, o la profundización del proceso de cambio”](http://www.telesurtv.net/bloggers/Entrevista-a-Juan-Ramon-Quintana-Ministro-de-la-Presidencia-de-Bolivia-20160726-0006.html)
+<br>
+Reymi Ferreira
+<br>
+[Ferreira: El 21 de febrero hay que rechazar el "carnaval de la mentira"](http://www.paginasiete.bo/nacional/2017/2/5/ferreira-febrero-rechazar-carnaval-mentira-126247.html)
+<br>
+José Alberto Gonzales 
+[Gonzales: "la gente no votó en su gran mayoría con el cerebro sino con el hígado"](http://www.paginasiete.bo/nacional/2017/2/5/ferreira-febrero-rechazar-carnaval-mentira-126247.html)
+<br>
+Declaraciones de medios y otras personalidades sobre el 21F
+<br>
+Walter Chávez
+[Walter Chávez atribuye la derrota del Sí al Vicepresidente y Hugo Moldiz](http://eju.tv/2016/03/walter-chavez-atribuye-la-derrota-del-al-vicepresidente-hugo-moldiz/)
+<br>
+Boris Miranda
+<br>
+[Cómo se explica y qué significa para Bolivia la derrota de Evo Morales en el referendo por su cuarto mandato](http://www.bbc.com/mundo/noticias/2016/02/160222_significado_derrota_evo_morales_referendo_reeleccion_bolivia_bm)
+<br>
+Pablo Stefanoni
+[Un referéndum por penales]( http://www.rebelion.org/noticia.php?id=209245)
+<br>
+BBC Noticias
+[Q&A: Bolivia referendum]( http://www.bbc.com/news/world-latin-america-35617059)
+<br>
+Sobre el conflicto con Potosí
+<br>
+Johnny Llally
+[Oficialismo se autoengaña sobre causa de su derrota]( http://eju.tv/2017/02/oficialismo-se-autoengana-sobre-causa-de-su-derrota/)
+<br>
+Sobre el conflicto en El Alto
+Nancy Conde, ex Directora Municipal de Desarrollo Humano 
+<br>
+[Seis muertos en asalto a la Alcaldía alteña](http://www.paginasiete.bo/especial02/2016/2/18/seis-muertos-asalto-alcaldia-altena-87136.html)
+
+
 
 
