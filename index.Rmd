@@ -38,7 +38,7 @@ A un año del referendo por la reelección...
 
 <center><h2>**VOTO EN EL EXTERIOR: ¿Bastión del Presidente?**</center></h2>
 <br>
-<center><img src="fotos/AGL.png" height="500px" width="300px" /></center> > *"En el exterior se ha dado un fenómeno muy interesante. En algunos países, en Asia, ganó el No, pero son 10, 20, 40, 100 votos. Sin embargo, en los lugares donde hay mayor presencia boliviana, de gente trabajadora, sencilla y esforzada, como es el caso de Argentina y Brasil, el SI ha ganado de manera abrumadora, con cerca del 80% en Argentina, y 80% en Brasil. Sin embargo, el recuento oficial lo va a dar el TSE. Pero por supuesto que esos datos influyen de manera notable en el recuento final" Alvaro García Linera*
+<center><img src="fotos/AGL.png" height="500px" width="300px" /></center> >*"En el exterior se ha dado un fenómeno muy interesante. En algunos países, en Asia, ganó el No, pero son 10, 20, 40, 100 votos. Sin embargo, en los lugares donde hay mayor presencia boliviana, de gente trabajadora, sencilla y esforzada, como es el caso de Argentina y Brasil, el SI ha ganado de manera abrumadora, con cerca del 80% en Argentina, y 80% en Brasil. Sin embargo, el recuento oficial lo va a dar el TSE. Pero por supuesto que esos datos influyen de manera notable en el recuento final" Alvaro García Linera*
 *Fuente:* [La Razón](http://www.la-razon.com/index.php?_url=/nacional/animal_electoral/dice-votos-paises-clave_0_2441155884.html)
 <br>
 <br>
@@ -96,5 +96,79 @@ g5 <- plot_ly(perdida.porcentaje.exterior2,
               type = "bar", name = "xxx", orientation = "h")
 g5
 ```
+<br>
+<br>
+<br>
+<center><h2>**EL VOTO en los municipios: las dimensiones de la derrota electoral**<center></h2>
+<center><img src="fotos/gringo_gonzales_2.png" height="500px" width="300px" /></center> >*"Hubo un momento particular, la gente no votó definitivamente en su gran mayoría con su cerebro lo hizo con el hígado o con el páncreas o con otro órgano que no necesariamente es para analizar y reflexionar, es parte de ese resultado" José Alberto (Gringo) Gonzáles*
+*Fuente:* [Página Siete](http://www.paginasiete.bo/nacional/2017/2/9/gonzales-la-gente-voto-gran-mayoria-cerebro-sino-higado-126754.html)
+<br>
+<br>
+<br>
+<center><img src="fotos/jrq2.png" height="500px" width="300px" /></center> >*El 21F ha sido un momento de recomposición generado desde Estados Unidos que reorganiza el campo político en Bolivia. Ahora la pregunta es si esta acumulación de fuerza política, de analistas encubiertos, de medios de comunicación, que han permitido el avance de su retaguardia a la primera línea de campaña política va a ser suficiente para dar batalla al proceso de cambio. Juan Ramón Quintana*
+*Fuente:* [Telesur](http://www.telesurtv.net/bloggers/Entrevista-a-Juan-Ramon-Quintana-Ministro-de-la-Presidencia-de-Bolivia-20160726-0006.html)
+<br>
+<br>
+<center><h2>**EL VOTO en los municipios: las dimensiones de la derrota electoral**<center></h2>
+De 339 municipios, el presidente perdió apoyo en 324. Es decir, que **el NO ganó en el 96% de los municipios del país**
+<center><img src="fotos/binomial.png" height="2000px" width="1500px" /></center>
+<br>
+<br>
+<center><h2>¿Cuánto apoyo perdió realmente el Presidente Morales?<center></h2>
+<br>
+<center><img src="fotos/evo_2.png" height="500px" width="300px" /></center> >*"Me ha sorprendido que después de semejante campaña el 50% sea el voto duro de nuestra revolución".Evo Morales Aima*
+*Fuente:* [La Razón](http://www.la-razon.com/nacional/animal_electoral/Frases-Evo-Morales_0_2442355800.html)
+<br>
+<br>
+<br>
+> *"Estoy seguro que por culpa de algunas de nuestras autoridades hemos perdido. Estamos investigando por qué". Evo Morales Aima*
+*Fuente:*  [La Razón](http://www.la-razon.com/nacional/animal_electoral/Frases-Evo-Morales_0_2442355800.html)
+<br>
+<br>
+En comparación a las elecciones de 2014, en las que el MAS ganó con cerca del 61% del total de votos a nivel nacional, el presidente Morales en el referendo de 2016 **PERDIÓ CERCA A 630 mil votos, que equivalen a casi el 13%.**
+<br>
+<br>
+<center><img src="fotos/porcentaje.diferencias.png" height="2000px" width="1500px" /></center>
+<br>
+<br>
+<center><h2>¿**?Por qué perdió el Presidente Morales?**?<center></h2>
+<br>
+<center><img src="fotos/linera1.png" height="500px" width="300px" /></center> >*"(Sobre Potosí) Sí, eso fue duro, porque hemos bajado a menos del 20%, cuando bordeábamos el 40%, 50%. Pese a todo, hemos podido remontar una pregunta muy complicada".Alvaro García Linera*
+*Fuente:* [Eju](http://eju.tv/2016/05/garcia-linera-todos-fuimos-titeres-tres-cuatro-personas/)
+<br>
+<br>
+<br>
+<center><img src="fotos/Jhonny Llally.png" height="500px" width="300px" /></center> >*"Ellos piensan que es por Zapata. A nosotros que nos importa eso, no somos tontos, sentimos y pensamos así". Johnny Llally*
+*Fuente:* [Eju](http://eju.tv/2017/02/oficialismo-se-autoengana-sobre-causa-de-su-derrota/)
+<br>
+<br>
+<br>
+> *"Señor Evo Morales, usted ha enviado a estos dirigentes que eran sus candidatos. Han quitado la vida  de gente inocente. ¿Cuántas vidas más tienen que ofrendarse?...¿Qué hizo El Alto  para merecer esta masacre?". Nancy Conde, ex directora de Desarrollo Humano del Gobierno Municipal de El Alto*
+*Fuente:* Página Siete[Página Siete](http://www.paginasiete.bo/especial02/2016/2/18/seis-muertos-asalto-alcaldia-altena-87136.html)  
+<br>
+<br>
+## Los conflictos influyeron de manera importante en la pérdida de apoyo del presidente. 
+<br>
+## Claramente, el apoyo histórico al presidente Morales ***ha BAJADO*** en lugares estratégicos para el MAS.
+<br>
+<br>
+GRAFICO TENDENCIAS
+<br>
+<br>
+<center><img src="fotos/evo 2.png" height="500px" width="300px" /></center>
 
-hasta aqui
+> *"Ustedes saben muy bien que el pasado 21 de febrero ganó la mentira. No sé de dónde viene esa propuesta de pedir la anulación del referendo, pero puedo imaginarme que es suscitado por las mentiras, mentiras y mentiras".Evo Morales Aima*
+*Fuente:* [Telesur](http://www.telesurtv.net/news/Evo-Morales-Derrota-en-referendo-fue-por-mentiras-de-la-derecha-20161223-0031.html)
+
+## El presidente necesitaba 69.244 votos más para ganar el 21F.
+<br>
+## ***El presidente perdió 99.858 votos en Potosí, El Alto y su propio bastión, el Chapare...***
+<br>
+<br>
+<center><img src="fotos/chavez.png" height="500px" width="300px" /></center>
+
+> *"El Gobierno se equivoca cuando cree que son solamente los asuntos personales (de Morales) los que los llevaron a perder la elección, la campañaa del MAS está viciada por la soberbia y la intemperancia de tipos como García Linera y Hugo Moldiz".Walter Chávez*
+*Fuente:* [Eju](http://eju.tv/2016/03/walter-chavez-atribuye-la-derrota-del-al-vicepresidente-hugo-moldiz/)
+
+
+
