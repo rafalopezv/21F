@@ -45,7 +45,7 @@ Los resultados muestran que:
 <br>
 <br>
 <center><h4> Sólo 1 de cada 3 electores fue a votar<center></h4>
-<center><h4> El apoyo al Presidente en el exterior ha dismimuído en 21%<center></h4>
+<center><h4> El apoyo al Presidente en el exterior ha disminuído en 21%<center></h4>
 <br>
 <br>
 Los bolivianos en el exterior votan en 33 países; sin embargo, el 95% de los votantes se concentran en Argentina, Brasil, España, Estados Unidos, Italia y Chile
@@ -70,6 +70,7 @@ g3
 <br>
 <br>
 <center><h4> A nivel agregado 1 de cada 3 bolivianos en el exterior FUE A VOTAR<center><h4>
+
 ```{r pressure, echo=FALSE,include=T}
 agregado.3 <- rio::import("bases/agregado.3.csv")
 g1 <- plot_ly(agregado.3, x = agregado.3$PROCESO, y = agregado.3$`PORCENTAJE EMITIOS`,
@@ -159,25 +160,32 @@ g7
 <br>
 <br>
 <center><h2>El presidente perdió 99.858 votos en Potosí, El Alto y su propio bastión, el Chapare<center></h2>
+
 <br>
 <br>
 <br>
-##CONCLUSIONES
+
+## CONCLUSIONES
 <br>
 <br>
-- Un factor que ha afectado el resultado del referendo del 21 de febrero de 2016 es que cerca a 80 mil personas inscritas en el padrón en el exterior NO votaron, lo que podría entenderse como un síntoma de apatía o desinterés. Considerando que la tendencia del voto en el exterior es de mayoritario apoyo al presidente, la abstención ha jugado un rol en contra de la propuesta.
+
+<left>- Un factor que ha afectado el resultado del referendo del 21 de febrero de 2016 es que cerca a 80 mil personas inscritas en el padrón en el exterior NO votaron, lo que podría entenderse como un síntoma de apatía o desinterés. Considerando que la tendencia del voto en el exterior es de mayoritario apoyo al presidente, la abstención ha jugado un rol en contra de la propuesta.</left>
 <br>
 <br>
-- Aunque el voto en el exterior aún muestra una tendencia favorable al Presidente Morales, hay una disminución significativa de un 21% a nivel agregado. La tendencia negativa es evidente incluso en los recintos que antes fueran más fuertes como Brasil y Argentina.
+
+<left>- Aunque el voto en el exterior aún muestra una tendencia favorable al Presidente Morales, hay una disminución significativa de un 21% a nivel agregado. La tendencia negativa es evidente incluso en los recintos que antes fueran más fuertes como Brasil y Argentina.</left>
 <br>
 <br>
-- En territorio boliviano, con respecto a 2014, hay una pérdida de apoyo al Presidente en el 96% de los municipios. En términos de votos, eso se traduce en cerca a 630 mil personas MENOS. 
+
+<left>- En territorio boliviano, con respecto a 2014, hay una pérdida de apoyo al Presidente en el 96% de los municipios. En términos de votos, eso se traduce en cerca a 630 mil personas MENOS.</left> 
 <br>
 <br>
-- Si se contrastan espacios estratégicos con conflictos sociales mayores en los meses previos al referendo, puede evidenciarse una correlación entre los conflictos y una pérdida más intensa de apoyo, como muestra el caso de Potosí y El Alto.
+
+<left>- Si se contrastan espacios estratégicos con conflictos sociales mayores en los meses previos al referendo, puede evidenciarse una correlación entre los conflictos y una pérdida más intensa de apoyo, como muestra el caso de Potosí y El Alto.</left>
 <br>
 <br>
-- En términos generales, el apoyo al presidente ha disminuido, no por causa de un solo y único conflicto o temática, sino por una serie de hechos, factores y conflictos.
+
+<left>- En términos generales, el apoyo al presidente ha disminuido, no por causa de un solo y único conflicto o temática, sino por una serie de hechos, factores y conflictos.</left>
 
 ##REFERENCIAS
 <br>
@@ -228,7 +236,4 @@ Sobre el conflicto en El Alto
 Nancy Conde, ex Directora Municipal de Desarrollo Humano 
 <br>
 [Seis muertos en asalto a la Alcaldía alteña](http://www.paginasiete.bo/especial02/2016/2/18/seis-muertos-asalto-alcaldia-altena-87136.html)
-
-
-
 
