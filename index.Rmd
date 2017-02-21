@@ -5,6 +5,9 @@ output:
         theme: journal
         self_contained: false
         fig_caption: true
+bibliography:
+- packages.bib
+- bibliography.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -14,9 +17,13 @@ setwd("/Users/rafalopezv/Dropbox/R/analisis.electoral/21F/")
 
 # Cargado de paquetes necesarios
 pkgs <- c("rio", "magrittr", "xlsx", "readxl", "stringi", "gdata",
-          "gsubfn", "dplyr", "plyr", "leaflet", "plotly")
+          "gsubfn", "dplyr", "plyr", "leaflet", "plotly", "repmis", "knitr")
 lapply(pkgs, function(x) require(x, character.only = TRUE))
 rm(pkgs)
+
+packages <- c("rio", "magrittr", "xlsx", "readxl", "stringi", "dplyr", "plyr", "plotly", "repmis", "knitr")
+repmis::LoadandCite(packages, file = 'packages.bib')
+
 ```
 <!-- Header -->
 <center><h1><i class="fa fa-thumb-tack"></i>21F: La historia que cuentan los números</h1></center>
@@ -43,21 +50,20 @@ Los resultados muestran que:
 <br>
 <center><h3>Los resultados oficiales del voto en el exterior muestran DOS VERDADES:<center></h3>
 <br>
-<br>
-<center><h4> Sólo 1 de cada 3 electores fue a votar<center></h4>
-<center><h4> El apoyo al Presidente en el exterior ha disminuído en 21%<center></h4>
-<br>
-<br>
-Los bolivianos en el exterior votan en 33 países; sin embargo, el 95% de los votantes se concentran en Argentina, Brasil, España, Estados Unidos, Italia y Chile
+<center><h3> Sólo 1 de cada 3 electores fue a votar<center></h3>
+<center><h3> El apoyo al Presidente en el exterior ha disminuído en 21%<center></h3>
 <br>
 <br>
-<center><h4> Los que no votaron <center></h4>
-<br>
-Alrededor de 80 mil personas inscritas no emitieron su voto en el exterior
+<center><h3>Los bolivianos en el exterior votan en 33 países; sin embargo, el 95% de los votantes se concentran en Argentina, Brasil, España, Estados Unidos, Italia y Chile<center></h3>
 <br>
 <br>
+<center><h2> Los que no votaron <center></h2>
 <br>
-<center><h4> Argentina, Brasil, España, Estados Unidos, Italia y Chile:  98% de la abstención <center></h4>
+<center><h3>Alrededor de 80 mil personas inscritas no emitieron su voto en el exterior<center><h3>
+<br>
+<br>
+<br>
+<center><h3> Argentina, Brasil, España, Estados Unidos, Italia y Chile:  98% de la abstención <center></h3>
 ```{r,echo=FALSE,include=T}
 caida.emitidos.exterior <- rio::import("bases/caida.emitidos.exterior.csv")
 g3 <- plot_ly(caida.emitidos.exterior, 
@@ -69,8 +75,7 @@ g3
 ```
 <br>
 <br>
-<center><h4> A nivel agregado 1 de cada 3 bolivianos en el exterior FUE A VOTAR<center><h4>
-
+<center><h3> A nivel agregado 1 de cada 3 bolivianos en el exterior FUE A VOTAR <center></h3>
 ```{r pressure, echo=FALSE,include=T}
 agregado.3 <- rio::import("bases/agregado.3.csv")
 g1 <- plot_ly(agregado.3, x = agregado.3$PROCESO, y = agregado.3$`PORCENTAJE EMITIOS`,
@@ -82,11 +87,11 @@ g1
 <br>
 <br>
 <br>
-<center><h4>Los que si votaron<center></h4>
+<center><h2>Los que si votaron<center></h2>
 <br>
 <br>
 <br>
-<center><h4>Con respecto a la votación del 2014, el apoyo al Presidente en el exterior muestra una disminución del 21%<center></h4>
+<center><h3>Con respecto a la votación del 2014, el apoyo al Presidente en el exterior muestra una disminución del 21%<center></h3>
 <br>
 ```{r,echo=FALSE,include=T}
 perdida.afuera <- rio::import("bases/perdida.afuera.csv")
@@ -96,7 +101,7 @@ g2
 ```
 <br>
 <br>
-<center><h4> Porcentualmente, El Presidente PERDIÓ apoyo en 31 de 33 países respecto a la elección general de 2014. Sólo incrementó votación en la INDIA, donde votaron 9 personas 
+<center><h3> Porcentualmente, El Presidente PERDIÓ apoyo en 31 de 33 países respecto a la elección general de 2014. Sólo incrementó votación en la INDIA, donde votaron 9 personas<center></h3>
 <br>
 <br>
 ```{r,echo=FALSE,include=T}
@@ -109,7 +114,7 @@ g5
 ```
 <br>
 <br>
-<center><h4>Disminución de votos absolutos en los principales países de votación en el exterior respecto a la elección general de 2014<center></h4>
+<center><h3>Disminución de votos absolutos en los principales países de votación en el exterior respecto a la elección general de 2014<center></h3>
 <br>
 ```{r,echo=FALSE,include=T}
 perdida.porcentaje.exterior1 <- rio::import("bases/perdida.porcentaje.exterior1.csv")
@@ -125,7 +130,7 @@ g4
 <center><h2>**VOTO EN BOLIVIA**<center></h2>
 <br>
 <br>
-<center><h4>De 339 municipios, el Presidente REDUJO SU APOYO en 324 (96%), respecto a la elección general de 2014<center>
+<center><h4>De 339 municipios, el Presidente REDUJO SU APOYO en 324 (96%), respecto a la elección general de 2014<center></h4>
 <br>
 <center><img src="fotos/binomial.png" height="1500px" width="1150px" /></center>
 <br>
@@ -140,10 +145,10 @@ El gráfico siguiente muestra la intensidad de la disminución o incremento del 
 <br>
 <br>
 <br>
-<center><h4>Los conflictos influyeron de manera importante en la pérdida de apoyo del presidente en Bolivia<center></h4> 
+<center><h3>Los conflictos influyeron de manera importante en la pérdida de apoyo del presidente en Bolivia<center></h3> 
 <br>
 <br>
-El apoyo histórico al presidente Morales ha disminuído en lugares estratégicos
+El apoyo histórico al presidente Morales ha disminuído en lugares estratégicos (en porcentaje)
 <br>
 <br>
 <br>
@@ -164,8 +169,8 @@ g7
 <br>
 <br>
 <br>
+<h2>Conclusiones</h2>
 
-## CONCLUSIONES
 <br>
 <br>
 
@@ -186,54 +191,81 @@ g7
 <br>
 
 <left>- En términos generales, el apoyo al presidente ha disminuido, no por causa de un solo y único conflicto o temática, sino por una serie de hechos, factores y conflictos.</left>
+<br>
+<br>
+<br>
+<h2>Noticias relacionadas</h2>
+<br>
+<br>
+DECLARACIONES DE AUTORIDADES DEL GOBIERNO NACIONAL
+<br>
+<br>
+Evo Morales:[Las frases con las que Evo Morales evaluó los resultados del referéndum](http://www.la-razon.com/nacional/animal_electoral/Frases-Evo-Morales_0_2442355800.html)
+<br>
+<br>
+Álvaro García Linera:[MAS dice que el Sí tiene 80% de votos en 2 países clave]( http://www.la-razon.com/index.php?_url=/nacional/animal_electoral/dice-votos-paises-clave_0_2441155884.html)
+<br>
+<br>
+Álvaro García Linera:[García Linera: “Todos fuimos títeres de tres o cuatro personas”]( http://eju.tv/2016/05/garcia-linera-todos-fuimos-titeres-tres-cuatro-personas/)
+<br>
+<br>
+Juan Ramón Quintana:[“En Bolivia existen dos opciones: la restauración conservadora, o la profundización del proceso de cambio”](http://www.telesurtv.net/bloggers/Entrevista-a-Juan-Ramon-Quintana-Ministro-de-la-Presidencia-de-Bolivia-20160726-0006.html)
+<br>
+<br>
+Reymi Ferreira:[Ferreira: El 21 de febrero hay que rechazar el "carnaval de la mentira"](http://www.paginasiete.bo/nacional/2017/2/5/ferreira-febrero-rechazar-carnaval-mentira-126247.html)
+<br>
+<br>
+José Alberto Gonzales:[Gonzales: "la gente no votó en su gran mayoría con el cerebro sino con el hígado"](http://www.paginasiete.bo/nacional/2017/2/9/gonzales-la-gente-voto-gran-mayoria-cerebro-sino-higado-126754.html)
+<br>
+<br>
+<br>
+DECLARACIONES DE MEDIOS Y OTRAS PERSONALIDADES SOBRE EL 21 F
+<br>
+<br>
+Walter Chávez:[Walter Chávez atribuye la derrota del Sí al Vicepresidente y Hugo Moldiz](http://eju.tv/2016/03/walter-chavez-atribuye-la-derrota-del-al-vicepresidente-hugo-moldiz/)
+<br>
+<br>
+Boris Miranda:[Cómo se explica y qué significa para Bolivia la derrota de Evo Morales en el referendo por su cuarto mandato](http://www.bbc.com/mundo/noticias/2016/02/160222_significado_derrota_evo_morales_referendo_reeleccion_bolivia_bm)
+<br>
+<br>
+Pablo Stefanoni:[Un referéndum por penales]( http://www.rebelion.org/noticia.php?id=209245)
+<br>
+<br>
+BBC Noticias:[Q&A: Bolivia referendum]( http://www.bbc.com/news/world-latin-america-35617059)
+<br>
+<br>
+<br>
+SOBRE EL CONFLICTO DE POTOSÍ
+<br>
+<br>
+Johnny Llally:[Oficialismo se autoengaña sobre causa de su derrota]( http://eju.tv/2017/02/oficialismo-se-autoengana-sobre-causa-de-su-derrota/)
+<br>
+<br>
+<br>
+SOBRE EL CONFLICTO EN EL ALTO
+<br>
+<br>
+Nancy Conde, ex Directora Municipal de Desarrollo Humano: [Seis muertos en asalto a la Alcaldía alteña](http://www.paginasiete.bo/especial02/2016/2/18/seis-muertos-asalto-alcaldia-altena-87136.html) 
+<br>
+<br>
+<h2>Fuentes y herramientas</h2>
 
-##REFERENCIAS
-<br>
-<br>
-Declaraciones de autoridades del gobierno nacional
-<br>
-Evo Morales
-<br>
-[Las frases con las que Evo Morales evaluó los resultados del referéndum](http://www.la-razon.com/nacional/animal_electoral/Frases-Evo-Morales_0_2442355800.html)
-<br>
-Álvaro García Linera
-<br>
-[MAS dice que el Sí tiene 80% de votos en 2 países clave]( http://www.la-razon.com/index.php?_url=/nacional/animal_electoral/dice-votos-paises-clave_0_2441155884.html)
-[García Linera: “Todos fuimos títeres de tres o cuatro personas”]( http://eju.tv/2016/05/garcia-linera-todos-fuimos-titeres-tres-cuatro-personas/)
-<br>
-Juan Ramón Quintana
-<br>
-[“En Bolivia existen dos opciones: la restauración conservadora, o la profundización del proceso de cambio”](http://www.telesurtv.net/bloggers/Entrevista-a-Juan-Ramon-Quintana-Ministro-de-la-Presidencia-de-Bolivia-20160726-0006.html)
-<br>
-Reymi Ferreira
-<br>
-[Ferreira: El 21 de febrero hay que rechazar el "carnaval de la mentira"](http://www.paginasiete.bo/nacional/2017/2/5/ferreira-febrero-rechazar-carnaval-mentira-126247.html)
-<br>
-José Alberto Gonzales 
-[Gonzales: "la gente no votó en su gran mayoría con el cerebro sino con el hígado"](http://www.paginasiete.bo/nacional/2017/2/5/ferreira-febrero-rechazar-carnaval-mentira-126247.html)
-<br>
-Declaraciones de medios y otras personalidades sobre el 21F
-<br>
-Walter Chávez
-[Walter Chávez atribuye la derrota del Sí al Vicepresidente y Hugo Moldiz](http://eju.tv/2016/03/walter-chavez-atribuye-la-derrota-del-al-vicepresidente-hugo-moldiz/)
-<br>
-Boris Miranda
-<br>
-[Cómo se explica y qué significa para Bolivia la derrota de Evo Morales en el referendo por su cuarto mandato](http://www.bbc.com/mundo/noticias/2016/02/160222_significado_derrota_evo_morales_referendo_reeleccion_bolivia_bm)
-<br>
-Pablo Stefanoni
-[Un referéndum por penales]( http://www.rebelion.org/noticia.php?id=209245)
-<br>
-BBC Noticias
-[Q&A: Bolivia referendum]( http://www.bbc.com/news/world-latin-america-35617059)
-<br>
-Sobre el conflicto con Potosí
-<br>
-Johnny Llally
-[Oficialismo se autoengaña sobre causa de su derrota]( http://eju.tv/2017/02/oficialismo-se-autoengana-sobre-causa-de-su-derrota/)
-<br>
-Sobre el conflicto en El Alto
-Nancy Conde, ex Directora Municipal de Desarrollo Humano 
-<br>
-[Seis muertos en asalto a la Alcaldía alteña](http://www.paginasiete.bo/especial02/2016/2/18/seis-muertos-asalto-alcaldia-altena-87136.html)
+Este estudio se ralizó con bases oficiales del Tribunal Supremo Electoral:  [-@TribunalSupremoElectoral:2014wp], [-@TribunalSupremoElectoral:2016ua], 
+[-@TribunalSupremoElectoral:2010vk]
+
+Se utilizó para la realización del estudio: R[-@CiteR], Rio[-@R-rio], Magrittr[-@R-magrittr], Xlsx[-@R-xlsx], Readxl[-@R-readxl], Stringi[-@R-stringi], Dplyr[-@R-dplyr], Plyr[-@R-plyr], Plotly[-@R-plotly], Repmis[-@R-repmis], Knitr[-@R-knitr]
+
+Para conocer el código de programación y las bases de datos utilizadas hacer clic [aqui](https://github.com/rafalopezv/21F/tree/gh-pages) 
+
+<h2>Estudio realizado por:</h2>
+
+Rafael López Valverde
+
+email:lopezvalverde.rafael@gmail.com
+
+<h2>Referencias</h2>
+
+
+
+
 
