@@ -78,7 +78,42 @@ municipal[, "EVO RE-ELECCIÓN %"] <- round(municipal$`EVO RE-ELECCIÓN`/municipa
 municipal[, "EVO ELECCIÓN NACIONAL %"] <- round(municipal$`EVO ELECCIÓN NACIONAL`/municipal$`VÁLIDOS ELECCIÓN NACIONAL`*100, 2)
 municipal[, "DIFERENCIA EVO % EN PORCENTAJES"] <- municipal$`EVO RE-ELECCIÓN %`-municipal$`EVO ELECCIÓN NACIONAL %`
 municipal <- municipal[,c(1:3,4,8,12,13,5,9,14,15,6,10,16,17,7,11,18,21,19,20,22)]
-municipal$PERDIDA <- municipal$`DIFERENCIA EVO` < 0
+
+# crear una fórmula para los crear las siguientes columnas
+y <- function(x) {
+  if(x < 0) {
+    print("PERDIÓ APOYO")
+  } else {
+    print("GANÓ APOYO")
+  }
+}
+
+municipal$`PERDIDA O GANANCIA` <- lapply(municipal$`DIFERENCIA EVO % EN PORCENTAJES`, y) %>%
+  unlist
+
+z <- function(x) {
+  if(x == 0 | x > 0) {
+    print("0 % a 13 %")
+  } else if(x < 0 & x > -15) {
+    print("-1 % a -15 %")
+  } else {
+    print("-15.01 % a -42 %")
+  }
+}
+
+municipal$MAGNITUD <- lapply(municipal$`DIFERENCIA EVO % EN PORCENTAJES`, z) %>% 
+  unlist
+rm(y, z)
+# fusionar con base del mapa a ser creado
+a <- import("/Users/rafalopezv/Dropbox/R/analisis.electoral/21F/339.municipios.vicepresidencia/municipal.dbf")
+a$no <- 1:344
+id <- import("/Users/rafalopezv/Dropbox/R/analisis.electoral/21F/id.xlsx")
+m1 <- merge(id, municipal, all.x = T)
+temp <- m1$DEPARTAMENTO == "LAGO" | m1$DEPARTAMENTO == "SALAR"
+m1[temp, c("PERDIDA O GANANCIA", "MAGNITUD")] <- "LAGO/SALAR"
+a <- merge(a, m1, by = "id")
+a <- plyr::arrange(a, a$no)
+rio::export(a, "/Users/rafalopezv/Dropbox/R/analisis.electoral/21F/339.municipios.vicepresidencia/municipal.dbf")
 
 # Cálculo voto en el exterior
 exterior <- re.ex %>% select (-BLANCOS, -NULOS, -NO)
